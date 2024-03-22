@@ -35,6 +35,16 @@ const Card = styled.div`
   overflow: hidden;
 }`;
 
+const CardTitle = styled.div`
+  display: flex;
+  color: black;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+`
+
 const CardDisplay = styled.div`
   border-radius: 32px;
   width: 25rem;
@@ -237,7 +247,6 @@ const App = (props) => {
         <Flex>{payments}</Flex>
         <Flex>
           <Btn
-            className="btn"
             onClick={() => onpay(item)}>
             Pay
           </Btn>
@@ -258,7 +267,7 @@ const App = (props) => {
             <img src={`./images/${item.image}`} />
           </CardImage>
           <CardContent >
-            <div className="card__title">{item.name}</div>
+            <CardTitle>{item.name}</CardTitle>
             <CardBtn
               onClick={function () {
                 handleSelected(item.id);
